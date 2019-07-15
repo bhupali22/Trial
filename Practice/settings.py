@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'New',  #we need to add entry for each app we created here
 ]
 
 MIDDLEWARE = [
