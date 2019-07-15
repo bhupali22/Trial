@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf.urls import url
+from New import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    #url(r'^$', views.index, name="index"),         #r stands for regex(regular expression) ^ means starts with and $ means end with and ^$ means nothing
+    path('', views.index),
+    path('message/', views.message),
 ]
