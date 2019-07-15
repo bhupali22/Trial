@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from django.conf.urls import url
+from django.conf.urls import url, include
 from New import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     #url(r'^$', views.index, name="index"),         #r stands for regex(regular expression) ^ means starts with and $ means end with and ^$ means nothing
     path('', views.index),
-    path('message/', views.message),
+    #path('message/', views.message),
+    path('New/', include('New.urls')),      #'' are important in include function otherwise it gives AttributeError. This statement means anything starting with New/ must go to New.urls file to find mapping url
 ]
