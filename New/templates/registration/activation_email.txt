@@ -1,0 +1,10 @@
+#this is template that will get filled by django registration module.
+
+This is activation email which will be send from system.
+
+Greetings,
+You just signed up for an ac at {{ site.name }}. Please click below url to activate it.
+
+http://{{ site.domain }}{% url 'registration_activate' activation_key %}    #activation key will be generated and filled automatically by django registration module
+
+This is valid for {{ expiration_days }}.

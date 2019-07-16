@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form method="post" action=".">
+    {% csrf_token %}    <!--template tag : it is putting cross side request for token, it is preventing from spoofing or hacking(security stuff)-->
+    {{form.as_p}}       <!--template variable : passed into template from view and those are context variables -->
+    <input type="submit" value="register" />
+</form>
+</body>
+</html>

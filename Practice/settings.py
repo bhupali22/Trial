@@ -31,12 +31,14 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # 'registration',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'registration',      #it will activate registration redux app within django
     'New',  #we need to add entry for each app we created here
 ]
 
@@ -67,6 +69,7 @@ TEMPLATES = [
         },
     },
 ]
+
 
 WSGI_APPLICATION = 'Practice.wsgi.application'
 
@@ -119,3 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#Registration
+ACCOUNT_ACTIVATION_DAYS = 15        #No of days account activation will last. After that they wont be able to use their account
+REGISTRATION_AUTO_LOGIN = True      #After registration, automatically login to account
+INCLUDE_REGISTER_URL = True
+#LOGIN_REDIRECT_URL = None
+ACCOUNT_AUTHENTICATED_REGISTRATION_REDIRECTS =  False       #if you dont put this line then we will get error page not found. but if you open same site in private mode then it will work fine
