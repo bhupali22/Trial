@@ -30,7 +30,7 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-INSTALLED_APPS = [
+INSTALLED_APPS = [          #ordering matters as django looks for files line by line. So if we put registration above new the files which we want to override from registration will never get priority. Files having same name will get priority as per order of installed apps
     # 'registration',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'registration',      #it will activate registration redux app within django
     'New',  #we need to add entry for each app we created here
+    'registration',      #it will activate registration redux app within django
 ]
 
 MIDDLEWARE = [
