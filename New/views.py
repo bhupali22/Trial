@@ -11,4 +11,7 @@ def message(request):
     context = {
         'count' : count
     }       #data is going to go in template through context variable
+    request.session['location'] = "unknown"
+    if request.user.is_authenticated:
+        request.session['location'] = "Earth"
     return render(request, 'msg.html',context)      #throgth context variable we are passing values to template

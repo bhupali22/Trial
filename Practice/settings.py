@@ -127,5 +127,19 @@ STATIC_URL = '/static/'
 ACCOUNT_ACTIVATION_DAYS = 15        #No of days account activation will last. After that they wont be able to use their account
 REGISTRATION_AUTO_LOGIN = True      #After registration, automatically login to account
 INCLUDE_REGISTER_URL = True
-#LOGIN_REDIRECT_URL = None
-ACCOUNT_AUTHENTICATED_REGISTRATION_REDIRECTS =  False       #if you dont put this line then we will get error page not found. but if you open same site in private mode then it will work fine
+LOGIN_REDIRECT_URL = '/New' #this defines where to redirect after user logged in
+ACCOUNT_AUTHENTICATED_REGISTRATION_REDIRECTS = True       #if you dont put this line then we will get error page not found. but if you open same site in private mode then it will work fine
+
+
+#Email Settings
+EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"   #address of gmail(smtp) server
+EMAIL_HOST_USER = "bhupali.maheshwari@gmail.com"    #username used to connect with smtp account with
+EMAIL_HOST_PASSWORD = "pakoda@22"
+EMAIL_PORT = 587    #TLS port no
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "books@mysterybooks.com"     #this is email address from which it will show that email is send
+
+
+
+
