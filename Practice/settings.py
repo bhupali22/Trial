@@ -38,6 +38,8 @@ INSTALLED_APPS = [          #ordering matters as django looks for files line by 
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'bootstrap3',
+    'bootstrap_themes',
     'New',  #we need to add entry for each app we created here
     'registration',      #it will activate registration redux app within django
 ]

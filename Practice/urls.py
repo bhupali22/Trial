@@ -21,7 +21,7 @@ from New import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     #url(r'^$', views.inde  x, name="index"),         #r   stands for regex(regular expression) ^ means starts with and $ means end with and ^$ means nothing
-    path('', views.index),
+    path('', views.index, name='index'),
     #path('accounts/', include('registration.backends.default.urls')),
     path('message/', views.message),
     path('New/', include('New.urls')),      #'' are important in include function otherwise it gives AttributeError. This statement means anything starting with New/ must go to New.urls file to find mapping url
