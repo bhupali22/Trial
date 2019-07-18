@@ -1,0 +1,24 @@
+{% load staticfiles %}      <!--Load staticfiles module-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Welcome To Mystery Books ! {% endblock %}</title>
+</head>
+<body background="{% static 'base/img/header_full.jpg' %}">     <!--But we need to load staticfile module to activate this tag-->
+{% block content %}
+{% if request.user.is_authenticated %}
+    <h1>
+        welcome, {% if request.user.first_name %}       <!--if first name is filled then display the first name else show username-->
+        {{ request.user.first_name }}
+        {% else %}
+        {{ request.user.username }}
+        {% endif %}! <a href="{% url 'auth_logout' %}">Log Out</a>  <!--When we see spaces after % then url is the function that is template tag is calling and follwed by that is function parameter. there can be multiple parameters.-->
+    </h1>
+{% else %}
+    <h1>Welcome, mysterious person! Would you like to <a href="{% url 'auth_login' %}">Log in?</a></h1>
+{% endif %}
+Welcome to next page !!!! There are {{ count }} books in store. User location : {{ request.session.location }}
+{% endblock %}
+</body>
+</html>

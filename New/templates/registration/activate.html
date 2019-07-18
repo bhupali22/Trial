@@ -1,12 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}       <!--activate.html is inheriting from base.html. This will be first statement. You cannot put any other statement above this statement-->
+
+{% block content %}
 There is a problem activating your account.
 This template is when your account_activation_days are over.
-</body>
-</html>
+{% endblock %}
+
 

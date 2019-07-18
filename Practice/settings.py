@@ -121,7 +121,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = '/static/'         #default django static url
 
 #Registration
 ACCOUNT_ACTIVATION_DAYS = 15        #No of days account activation will last. After that they wont be able to use their account
