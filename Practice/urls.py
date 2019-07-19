@@ -27,4 +27,5 @@ urlpatterns = [
     path('New/', include('New.urls')),      #'' are important in include function otherwise it gives AttributeError. This statement means anything starting with New/ must go to New.urls file to find mapping url
     url(r'^accounts/', include('registration.backends.default.urls')),
     # url(r'^store/', include('store.urls')),
+    url(r'^oauth/', include('social_django.urls', namespace='social')),
 ]

@@ -40,6 +40,7 @@ INSTALLED_APPS = [          #ordering matters as django looks for files line by 
     'django.contrib.staticfiles',
     'bootstrap3',
     'bootstrap_themes',
+    'social_django',
     'New',  #we need to add entry for each app we created here
     'registration',      #it will activate registration redux app within django
 ]
@@ -52,6 +53,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    #for social registration
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'Practice.urls'
@@ -67,6 +70,11 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                #for social registration
+
+                'social_django.context_processors.backends',
+
+                'social_django.context_processors.login_redirect',
             ],
         },
     },
@@ -142,6 +150,16 @@ EMAIL_PORT = 587    #TLS port no
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = "books@mysterybooks.com"     #this is email address from which it will show that email is send
 
+#authentication backends:
 
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.github.GithubOAuth2',
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+# Add the Facebook app credentials.
+SOCIAL_AUTH_GITHUB_KEY = '257b5dc305935ac9d940'
+SOCIAL_AUTH_GITHUB_SECRET = '3ce5f736113d94d39779bf458841d8fd321ad205'
 
 
