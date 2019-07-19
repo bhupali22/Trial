@@ -10,6 +10,7 @@
 
 {% block bootstrap3_extra_head %}
     <link href="https://fonts.googleapis.com/css?family=Tangerine" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
     <link href="{% static 'base/css/style.css' %}" rel="stylesheet" type="text/css">
 {% endblock %}
 
@@ -58,6 +59,9 @@
                {% block body %}
                <div class="col-md-8 col-md-offset-2 col-sm-12 maincontent">
                    Welcome to our store !
+                   {% block content %}
+
+                   {% endblock %}
                </div>
                {% endblock %}
            </div>

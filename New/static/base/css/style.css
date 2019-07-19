@@ -140,14 +140,11 @@ img.bg {
 
 /* Fix a couple things for mobile/low-res */
 
-@media screen and (max-width: 768px) {
-  img.bg {
-    left: 50%;
-    margin-left: -512px;   /* 50% */
-  }
+
   .maincontent {
     width: 80%;
     left: 10%;
+
   }
 }
 
