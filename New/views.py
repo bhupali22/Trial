@@ -16,3 +16,10 @@ def message(request):
     #if request.user.is_authenticated:
     #    request.session['location'] = "Earth"
     return render(request, 'base.html',context)      #throgth context variable we are passing values to template
+
+
+def book_details(request, book_id):         #book_id will come from url
+    context = {
+        'book': Book.objects.get(pk=book_id),
+    }
+    return render(request, 'New/details.html', context)
