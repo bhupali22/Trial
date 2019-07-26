@@ -26,7 +26,7 @@ def book_details(request, book_id):         #book_id will come from url
     return render(request, 'New/details.html', context)
 
 def add_to_cart(request, book_id):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         try:
             book = Book.objects.get(pk=book_id)
         except ObjectDoesNotExist:
@@ -46,7 +46,7 @@ def add_to_cart(request, book_id):
 
 
 def remove_from_cart(request, book_id):
-    if request.user.is_authenticated():
+    if request.user.is_authenticated:
         try:
             book = Book.objects.get(pk=book_id)
         except ObjectDoesNotExist:
@@ -60,8 +60,8 @@ def remove_from_cart(request, book_id):
 
 
 def cart(request):
-    if request.user.is_authenticated():
-        cart = Cart.objects.filter(user=request.user.id, active=True)
+    if request.user.is_authenticated:
+        cart = Cart.objects.get(user=request.user.id, active=True)
         orders = BookOrder.objects.filter(cart=cart)
         total = 0
         count = 0
@@ -73,6 +73,7 @@ def cart(request):
             'total': total,
             'count': count,
         }
-        return render(request, 'store/cart.html', context)
+        return render(request, 'New/cart.html', context)
     else:
         return redirect('index')
+

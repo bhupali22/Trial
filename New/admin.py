@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Book, Author
+from .models import Book, Author, BookOrder, Cart
 # Register your models here.
 #we have to register individual model or app which we want to display in admin panel
 
@@ -9,6 +9,14 @@ class BookAdmin(admin.ModelAdmin):
 class AuthorAdmin(admin.ModelAdmin):
     list_display = ('last_name', 'first_name')
 
+class BookOrderAdmin(admin.ModelAdmin):
+    list_display = ('book', 'cart', 'quantity')
+
+class CartAdmin(admin.ModelAdmin):
+    list_display = ('user', 'active', 'order_date')
+
 admin.site.register(Book, BookAdmin)
 admin.site.register(Author, AuthorAdmin)
 #so we have registered model, now it will get display in admin page
+admin.site.register(BookOrder, BookOrderAdmin)
+admin.site.register(Cart, CartAdmin)
