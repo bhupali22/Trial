@@ -1,6 +1,8 @@
 from django.core.exceptions import ObjectDoesNotExist
 from django.shortcuts import render, redirect
-from .models import Book, BookOrder, Cart
+from .models import Book, BookOrder, Cart, Review
+from .forms import ReviewForm
+
 
 # Create your views here.
 def index(request): #request is an http request object which is passed to view as first argument. This request contains all the imediate information which django needs in order to provide response to browser.
@@ -20,9 +22,27 @@ def message(request):
 
 
 def book_details(request, book_id):         #book_id will come from url
+    book = Book.objects.get(pk=book_id)
     context = {
-        'book': Book.objects.get(pk=book_id),
+        'book': book,
     }
+    if request.user.is_authenticated:
+        if request.method == "POST":        #check whether form is posted or not
+            form = ReviewForm(request.POST)     #creating object of ReviewForm
+            if form.is_valid():         #built in function which checks all form fields are valid
+                new_review = Review.objects.create(         #CREATING OBJECT OF Review table
+                    user=request.user,
+                    book=context['book'],
+                    text=form.cleaned_data.get('text')          #cleaned_data is attribute field of form and it holds all the cleaned data from that form i.e. striping out white space, tags, etc. It assures text is formatted correctly
+                )
+                new_review.save()
+        else:       #if request is get
+            #if Review.objects.filter(user=request.user, book=context['book'].count() == 0):        () is misplaced so it gives attributeError Book has no attribute count
+            if Review.objects.filter(user=request.user, book=context['book']).count() == 0:         #checking whether reviews exist for this user or not. If not then show the review form
+                form = ReviewForm()
+                context['form'] = form
+
+    context['reviews'] = book.review_set.all()      #getting review set
     return render(request, 'New/details.html', context)
 
 def add_to_cart(request, book_id):
