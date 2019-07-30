@@ -14,6 +14,8 @@ class Author(models.Model):
     def __str__(self):      #whenever django asks who are you then it will return first name and last name. It helps in displaying value of Author field in admin panel
         return "%s, %s" % (self.last_name, self.first_name)
 
+def cover_upload_path(instance, filename):      #instance is instance calling this function. So everytime we upload a book its going to create a new folder for book cover
+    return '/'.join(['books', str(instance.id), filename])
 
 class Book(models.Model):
     title = models.CharField(max_length=200)
@@ -22,6 +24,9 @@ class Book(models.Model):
     publish_date = models.DateField(default=timezone.now)
     price = models.DecimalField(decimal_places=2, max_digits=8)         #default value is added while migration as there are existing rows in database so they need to provide default value.
     stock = models.IntegerField(default=0)
+    #cover_image = models.ImageField(upload_to='books/', default='books/empty_cover.jpg')
+    #To place cover images in own folder
+    cover_image = models.ImageField(upload_to=cover_upload_path, default='books/empty_cover.jpg')
 
 
 class Review(models.Model):

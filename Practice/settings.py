@@ -68,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',     #this just lets use media_url variable in templates
             ],
         },
     },
@@ -125,6 +126,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
 STATIC_URL = '/static/'         #default django static url
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')           #media files are on server and they are coming from server where your application is running. There are some security reasons so django keeps them seperate
+MEDIA_URL = "/media/"
 
 #Registration
 ACCOUNT_ACTIVATION_DAYS = 15        #No of days account activation will last. After that they wont be able to use their account
