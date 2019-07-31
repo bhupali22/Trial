@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="92f4b253-c344-4dbe-95cf-4ca52fdb7fe9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/mystery_books.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/New/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/New/tests.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/New/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/New/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Practice/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/Practice/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,11 +15,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Practice/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
+            <state relative-caret-position="-154">
+              <caret line="185" column="30" selection-start-line="185" selection-start-column="30" selection-end-line="185" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -35,7 +36,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/New/tests.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="203">
@@ -131,9 +132,9 @@
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/Practice/urls.py" />
         <option value="$PROJECT_DIR$/New/urls.py" />
-        <option value="$PROJECT_DIR$/Practice/settings.py" />
         <option value="$PROJECT_DIR$/New/views.py" />
         <option value="$PROJECT_DIR$/New/tests.py" />
+        <option value="$PROJECT_DIR$/Practice/settings.py" />
       </list>
     </option>
   </component>
@@ -353,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1564559209236</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Unit testing done in tests.py">
+      <created>1564581519157</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1564581519157</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -409,7 +417,8 @@
     <MESSAGE value="Added file upload for book cover" />
     <MESSAGE value="Added Review form and stored reviews from form to database" />
     <MESSAGE value="Added debug toolbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added debug toolbar" />
+    <MESSAGE value="Unit testing done in tests.py" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unit testing done in tests.py" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/New/migrations/0001_initial.py">
@@ -674,13 +683,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Practice/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="29" column="24" selection-start-line="29" selection-start-column="24" selection-end-line="29" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/New/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -720,6 +722,13 @@
           <folding>
             <element signature="e#26#58#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Practice/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-154">
+          <caret line="185" column="30" selection-start-line="185" selection-start-column="30" selection-end-line="185" selection-end-column="30" />
         </state>
       </provider>
     </entry>
