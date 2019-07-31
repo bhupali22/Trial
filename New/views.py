@@ -1,5 +1,5 @@
 from django.core.exceptions import ObjectDoesNotExist
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .models import Book, BookOrder, Cart, Review
 from .forms import ReviewForm
 
@@ -22,7 +22,8 @@ def message(request):
 
 
 def book_details(request, book_id):         #book_id will come from url
-    book = Book.objects.get(pk=book_id)
+    book = get_object_or_404(Book, id=book_id)      #this will prevent from error Book matching query does not exist. And will say page does not exist when book_id does not exist in database.
+    #book = Book.objects.get(pk=book_id)
     context = {
         'book': book,
     }
