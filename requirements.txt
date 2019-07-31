@@ -7,3 +7,4 @@ python-social-auth==0.2.7
 social-auth-core
 social-auth-app-django
 pillow
+django-debug-toolbar

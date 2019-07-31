@@ -27,6 +27,12 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
+#Added for debug toolbar
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # ...
+]
 
 # Application definition
 
@@ -41,6 +47,7 @@ INSTALLED_APPS = [          #ordering matters as django looks for files line by 
     'bootstrap3',
     'bootstrap_themes',
     'social_django',
+    'debug_toolbar',
     'New',  #we need to add entry for each app we created here
     'registration',      #it will activate registration redux app within django
 ]
@@ -53,6 +60,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',      #added for dubug toolbar
 ]
 
 ROOT_URLCONF = 'Practice.urls'
@@ -158,4 +166,3 @@ AUTHENTICATION_BACKENDS = (
 # Add the Facebook app credentials.
 SOCIAL_AUTH_GITHUB_KEY = '257b5dc305935ac9d940'
 SOCIAL_AUTH_GITHUB_SECRET = '3ce5f736113d94d39779bf458841d8fd321ad205'
-
