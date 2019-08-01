@@ -1,0 +1,109 @@
+2019-08-01 12:45:23,935 django.db.backends   DEBUG    utils | (0.001) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+2019-08-01 12:45:23,937 django.db.backends   DEBUG    utils | (0.000) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+2019-08-01 12:46:20,128 django.db.backends   DEBUG    utils | (0.000) 
+            SELECT name, type FROM sqlite_master
+            WHERE type in ('table', 'view') AND NOT name='sqlite_sequence'
+            ORDER BY name; args=None
+2019-08-01 12:46:20,131 django.db.backends   DEBUG    utils | (0.001) SELECT "django_migrations"."app", "django_migrations"."name" FROM "django_migrations"; args=()
+2019-08-01 12:46:22,368 django.server        INFO     basehttp | "GET / HTTP/1.1" 200 9112
+2019-08-01 12:46:27,049 django.db.backends   DEBUG    utils | (0.001) SELECT "New_book"."id", "New_book"."title", "New_book"."author_id", "New_book"."description", "New_book"."publish_date", "New_book"."price", "New_book"."stock", "New_book"."cover_image" FROM "New_book" WHERE "New_book"."id" = 7; args=(7,)
+2019-08-01 12:46:27,264 django.request       WARNING  log | Not Found: /New/book/7
+2019-08-01 12:46:27,267 django.server        WARNING  basehttp | "GET /New/book/7 HTTP/1.1" 404 10677
+2019-08-01 12:46:30,660 django.template      DEBUG    base | Exception while resolving variable 'LANGUAGE_CODE' in template 'base.html'.
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'WSGIRequest' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'WSGIRequest' object has no attribute 'LANGUAGE_CODE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'LANGUAGE_CODE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [LANGUAGE_CODE] in <WSGIRequest: GET '/New/'>
+2019-08-01 12:46:30,664 django.db.backends   DEBUG    utils | (0.001) SELECT "New_book"."id", "New_book"."title", "New_book"."author_id", "New_book"."description", "New_book"."publish_date", "New_book"."price", "New_book"."stock", "New_book"."cover_image" FROM "New_book"; args=()
+2019-08-01 12:46:30,689 django.db.backends   DEBUG    utils | (0.000) SELECT "New_author"."id", "New_author"."first_name", "New_author"."last_name" FROM "New_author" WHERE "New_author"."id" = 2; args=(2,)
+2019-08-01 12:46:30,711 django.db.backends   DEBUG    utils | (0.000) SELECT "New_author"."id", "New_author"."first_name", "New_author"."last_name" FROM "New_author" WHERE "New_author"."id" = 2; args=(2,)
+2019-08-01 12:46:30,812 django.server        INFO     basehttp | "GET /New/ HTTP/1.1" 200 13222
+2019-08-01 12:46:30,823 django.server        INFO     basehttp | "GET /static/base/css/style.css HTTP/1.1" 200 5008
+2019-08-01 12:46:30,828 django.server        INFO     basehttp | "GET /media/books/2/gameofthronesfanart14.jpeg HTTP/1.1" 200 122308
+2019-08-01 12:46:30,833 django.server        INFO     basehttp | "GET /media/books/gameofthronesfanart14_7QPmFxx.jpeg HTTP/1.1" 200 122308
+2019-08-01 12:46:31,113 django.server        INFO     basehttp | "GET /static/base/img/header_full.jpg HTTP/1.1" 200 7535076
+2019-08-01 12:46:34,793 django.db.backends   DEBUG    utils | (0.000) SELECT "New_book"."id", "New_book"."title", "New_book"."author_id", "New_book"."description", "New_book"."publish_date", "New_book"."price", "New_book"."stock", "New_book"."cover_image" FROM "New_book" WHERE "New_book"."id" = 2; args=(2,)
+2019-08-01 12:46:34,815 django.template      DEBUG    base | Exception while resolving variable 'LANGUAGE_CODE' in template 'New/details.html'.
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'WSGIRequest' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'WSGIRequest' object has no attribute 'LANGUAGE_CODE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'LANGUAGE_CODE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [LANGUAGE_CODE] in <WSGIRequest: GET '/New/book/2'>
+2019-08-01 12:46:34,816 django.db.backends   DEBUG    utils | (0.000) SELECT "New_author"."id", "New_author"."first_name", "New_author"."last_name" FROM "New_author" WHERE "New_author"."id" = 2; args=(2,)
+2019-08-01 12:46:34,839 django.db.backends   DEBUG    utils | (0.000) SELECT "New_review"."id", "New_review"."book_id", "New_review"."user_id", "New_review"."publish_date", "New_review"."text" FROM "New_review" WHERE "New_review"."book_id" = 2; args=(2,)
+2019-08-01 12:46:34,895 django.db.backends   DEBUG    utils | (0.000) SELECT "auth_user"."id", "auth_user"."password", "auth_user"."last_login", "auth_user"."is_superuser", "auth_user"."username", "auth_user"."first_name", "auth_user"."last_name", "auth_user"."email", "auth_user"."is_staff", "auth_user"."is_active", "auth_user"."date_joined" FROM "auth_user" WHERE "auth_user"."id" = 1; args=(1,)
+2019-08-01 12:46:35,014 django.server        INFO     basehttp | "GET /New/book/2 HTTP/1.1" 200 12843
+2019-08-01 12:46:41,397 django.db.backends   DEBUG    utils | (0.001) SELECT "New_book"."id", "New_book"."title", "New_book"."author_id", "New_book"."description", "New_book"."publish_date", "New_book"."price", "New_book"."stock", "New_book"."cover_image" FROM "New_book" WHERE "New_book"."id" = 1; args=(1,)
+2019-08-01 12:46:41,423 django.template      DEBUG    base | Exception while resolving variable 'LANGUAGE_CODE' in template 'New/details.html'.
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 829, in _resolve_lookup
+    current = current[bit]
+TypeError: 'WSGIRequest' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 837, in _resolve_lookup
+    current = getattr(current, bit)
+AttributeError: 'WSGIRequest' object has no attribute 'LANGUAGE_CODE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 843, in _resolve_lookup
+    current = current[int(bit)]
+ValueError: invalid literal for int() with base 10: 'LANGUAGE_CODE'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\bmaheshwari\Desktop\Project\test\lib\site-packages\django\template\base.py", line 850, in _resolve_lookup
+    (bit, current))  # missing attribute
+django.template.base.VariableDoesNotExist: Failed lookup for key [LANGUAGE_CODE] in <WSGIRequest: GET '/New/book/1'>
+2019-08-01 12:46:41,426 django.db.backends   DEBUG    utils | (0.000) SELECT "New_author"."id", "New_author"."first_name", "New_author"."last_name" FROM "New_author" WHERE "New_author"."id" = 2; args=(2,)
+2019-08-01 12:46:41,456 django.db.backends   DEBUG    utils | (0.000) SELECT "New_review"."id", "New_review"."book_id", "New_review"."user_id", "New_review"."publish_date", "New_review"."text" FROM "New_review" WHERE "New_review"."book_id" = 1; args=(1,)
+2019-08-01 12:46:41,587 django.server        INFO     basehttp | "GET /New/book/1 HTTP/1.1" 200 12798

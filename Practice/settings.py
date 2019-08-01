@@ -169,39 +169,32 @@ SOCIAL_AUTH_GITHUB_SECRET = '3ce5f736113d94d39779bf458841d8fd321ad205'
 
 
 #logging
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'formatters': {         #formatters are objects that tell logger format of output
-        'basic': {
-            'format': '%(asctime)s %(name)-20s %(levelname)-8s %(module)s | %(message)s'
-        },
-    },
-
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',       #debug level tracking
-            'class': 'logging.handlers.RotatingFileHandler',
-            'formatter': 'basic',
-            'maxBytes': 10000,
-            'backupCount': 10,
-
-            'filename': os.path.join(BASE_DIR, 'mystery_books.log'),
-
-        },
-
-    },
-
-    'loggers': {
-
-        'store': {
-
-            'handlers': ['file'],
-
-            'level': 'DEBUG',
-
-        },
-
-    }
-
-}
+#LOGGING = {
+#    'version': 1,
+#    'disable_existing_loggers': False,
+#    'formatters': {         #formatters are objects that tell logger format of output
+#        'basic': {
+#            'format': '%(asctime)s %(name)-20s %(levelname)-8s %(module)s | %(message)s'
+#        },
+#    },
+#    'handlers': {
+#        'file': {
+#            'level': 'DEBUG',       #debug level tracking
+#            'class': 'logging.handlers.RotatingFileHandler',
+#            'formatter': 'basic',
+#            'maxBytes': 10000,
+#            'backupCount': 10,
+#            'filename': os.path.join(BASE_DIR, 'mystery_books.log'),
+#        },
+#    },
+#    'loggers': {
+#        'New': {
+#            'handlers': ['file'],
+#            'level': 'DEBUG',
+#        },
+#        'django': {
+#            'handlers': ['file'],
+#            'level': 'DEBUG',
+#        }
+#    }
+#}
