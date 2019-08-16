@@ -9,5 +9,5 @@ urlpatterns = [
     url(r'^add/(\d+)', views.add_to_cart, name='add_to_cart'),
     url(r'^remove/(\d+)', views.remove_from_cart, name='remove_from_cart'),     #d represents digit. w is used for alphanumeric
     url(r'^cart/', views.cart, name='cart'),
-    path('__debug__/', include(debug_toolbar.urls)),
+    #path('__debug__/', include(debug_toolbar.urls)),
 ]

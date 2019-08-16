@@ -28,26 +28,24 @@ DEBUG = True
 ALLOWED_HOSTS = []
 
 #Added for debug toolbar
-INTERNAL_IPS = [
-    # ...
-    '127.0.0.1',
-    # ...
-]
+#INTERNAL_IPS = [
+#    '127.0.0.1',
+#]
 
 # Application definition
 
 INSTALLED_APPS = [          #ordering matters as django looks for files line by line. So if we put registration above new the files which we want to override from registration will never get priority. Files having same name will get priority as per order of installed apps
     # 'registration',
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
+    'django.contrib.admin',     #by default present for admin site
+    'django.contrib.auth',      #by default present for admin site
+    'django.contrib.contenttypes',      #by default present for admin site
+    'django.contrib.sessions',          #by default present for admin site
+    'django.contrib.messages',          #by default present for admin site
     'django.contrib.staticfiles',
     'bootstrap3',
     'bootstrap_themes',
     'social_django',
-    'debug_toolbar',
+    #'debug_toolbar',
     'New',  #we need to add entry for each app we created here
     'registration',      #it will activate registration redux app within django
 ]
@@ -57,13 +55,13 @@ MIDDLEWARE = [
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
-    'django.contrib.auth.middleware.AuthenticationMiddleware',
-    'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.auth.middleware.AuthenticationMiddleware',      #by default present for admin site
+    'django.contrib.messages.middleware.MessageMiddleware',         #by default present for admin site
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',      #added for dubug toolbar
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',      #added for dubug toolbar
 ]
 
-ROOT_URLCONF = 'Practice.urls'
+ROOT_URLCONF = 'Practice.urls'      #Python module URLconf ( A table of contents for your app, it contains a simple mapping between URL patterns and Python callback functions(views).) imports urls path from practice.urls
 
 TEMPLATES = [
     {
@@ -74,8 +72,8 @@ TEMPLATES = [
             'context_processors': [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
-                'django.contrib.auth.context_processors.auth',
-                'django.contrib.messages.context_processors.messages',
+                'django.contrib.auth.context_processors.auth',      #by default present for admin site
+                'django.contrib.messages.context_processors.messages',      #by default present for admin site
                 'django.template.context_processors.media',     #this just lets use media_url variable in templates
             ],
         },

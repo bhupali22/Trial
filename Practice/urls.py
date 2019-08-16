@@ -21,13 +21,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('admin/', admin.site.urls),        #by default present for admin site. you’ll be able to use the admin site by visiting the URL you hooked it into (/admin/, by default).
     #url(r'^$', views.inde  x, name="index"),         #r   stands for regex(regular expression) ^ means starts with and $ means end with and ^$ means nothing
     path('', views.index, name='index'),
     #path('accounts/', include('registration.backends.default.urls')),
     path('message/', views.message),
     path('New/', include('New.urls')),      #'' are important in include function otherwise it gives AttributeError. This statement means anything starting with New/ must go to New.urls file to find mapping url
-    url(r'^accounts/', include('registration.backends.default.urls')),
+    url(r'^accounts/', include('registration.backends.default.urls')),      #include() function allows referencing other URLConf. Whenever Django encounters include(), it chops off whatever part of the URL matched up to that point and sends the remaining string to the included URLconf for further processing.
     # url(r'^store/', include('store.urls')),
     url(r'^oauth/', include('social_django.urls', namespace='social')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)       #This is going to give us url for media file which django will consider
